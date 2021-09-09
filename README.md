@@ -25,7 +25,13 @@ As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from work
 
 
 ## Button Mappings
-![alt text](https://modernroboticsinc.com/fusion_docs/img/usbGamepad/gamepad_logitech.png)
+![gamepad_logitech_buttons](https://user-images.githubusercontent.com/3460254/132637436-eb833f64-042f-4bdc-9431-5c734b44bf5c.png)
+
+Button | Function
+-----|----
+Axis 1 up/down | Left wheels forward/back
+Axis 3 up/down | Right wheels forward/back
+Right bumper (Button 5) | Press for faster; release for slow mode
 
 ## Help
 
