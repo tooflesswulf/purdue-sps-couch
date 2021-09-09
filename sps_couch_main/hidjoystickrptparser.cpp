@@ -1,5 +1,4 @@
 #include "hidjoystickrptparser.h"
-#include "jsconditioning.h"
 
 #define J1_X         (float)(x1 - 128) * 0.0078125
 #define J1_Y         (float)(y1 - 127) * -0.0078125
@@ -36,77 +35,6 @@ uint8_t x1, y1, x2, y2, rz, hat, dn;
 
 double pos_max_1, neg_max_1, pos_max_2, neg_max_2;
 bool slow_mode = 1;
-
-void update_stuff() {
-
-  /*Serial.print("x1: ");
-  Serial.print(J1_X);
-  Serial.print("  y1: ");
-  Serial.print(J1_Y);
-  Serial.print("  x2: ");
-  Serial.print(J2_X);
-  Serial.print("  y2: ");
-  Serial.print(J2_Y);
-
-  Serial.print("  a: ");
-  Serial.print(A_BTN);
-  Serial.print("  b: ");
-  Serial.print(B_BTN);
-  Serial.print("  x: ");
-  Serial.print(X_BTN);
-  Serial.print("  y: ");
-  Serial.print(Y_BTN);
-
-  Serial.print("  lb: ");
-  Serial.print(LB);
-  Serial.print("  lt: ");
-  Serial.print(LT);
-  Serial.print("  rb: ");
-  Serial.print(RB);
-  Serial.print("  rt: ");
-  Serial.println(RT);*/
-   // condition( value, pos_max, neg_max, pos_offset, neg_offset, pos_deadband, neg_deadband )
-  // *_max should be greater in magnitude than *_offset
-
-  slow_mode = !RB;
-  Serial.println(slow_mode);
-
-  if (slow_mode) {
-    pos_max_1 = 0.55;
-    neg_max_1 = 0.55;
-    pos_max_2 = 0.5;
-    neg_max_2 = 0.5;
-  } else {
-    pos_max_1 = 0.8;
-    neg_max_1 = 0.8;
-    pos_max_2 = 0.8;
-    neg_max_2 = 0.8;
-  }
-    
-  int out;
-  if (J1_Y >= 0) {
-    float w = condition(J1_Y, pos_max_1, neg_max_1, 0.45, -0.45, 0.1, -0.1);
-    Serial.print("joy in: ");
-    Serial.println(w);
-    out = (int)(w * 255.0);
-    Serial.print("out cycle: ");
-    Serial.println(out);
-    analogWrite(3, out);
-  }
-
-  if (J2_Y >= 0) {
-    float v = condition(J2_Y, pos_max_2, neg_max_2, 0.4, -0.4, 0.1, -0.1);
-    Serial.print("joy in: ");
-    Serial.println(v);
-    out = (int)(v * 255.0);
-    Serial.print("out cycle: ");
-    Serial.println(out);
-    analogWrite(5, out);
-  }
-  
-}
-
-
 
 JoystickReportParser::JoystickReportParser(JoystickEvents *evt) :
 joyEvents(evt),
