@@ -21,7 +21,12 @@ First, download Arduino IDE v1.8+
 
 From the Arduino IDE, go to Sketch->Include Library->Manage Libraries. Search for USB Host Shield 2.0, and install the latest version.
 
-As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from working with our Logitech F310 game controller. To patch this, follow the instructions here (https://github.com/AlanFord/Logitech_F310_and_Arduino). Once you do this, you should be able to hit "Upload" and the motor controller should respond to joystick inputs.
+As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from working with our Logitech F310 game controller. To patch this, follow the instructions here (https://github.com/AlanFord/Logitech_F310_and_Arduino). 
+
+
+### Running the code
+
+Open the main Arduino file `sps_couch_main/sps_couch_main.ino`, and verify that it builds. Once you connect your Arduino to the computer, you should be able to hit "Upload" and the motor controller should respond to joystick inputs. For testing, the received and sent values are all printed to Serial on baud 115200.
 
 
 ## Button Mappings
