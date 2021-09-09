@@ -24,6 +24,9 @@ From the Arduino IDE, go to Sketch->Include Library->Manage Libraries. Search fo
 As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from working with our Logitech F310 game controller. To patch this, follow the instructions here (https://github.com/AlanFord/Logitech_F310_and_Arduino). Once you do this, you should be able to hit "Upload" and the motor controller should respond to joystick inputs.
 
 
+## Button Mappings
+![alt text](https://modernroboticsinc.com/fusion_docs/img/usbGamepad/gamepad_logitech.png)
+
 ## Help
 
 ---
