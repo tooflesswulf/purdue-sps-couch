@@ -7,18 +7,22 @@ Code for the SPS couch's Arduino motor controller interface. This code reads ser
 
 ## Getting Started
 
-### Dependencies, Flashing/Executing
+### IDE installation and setup
 
 First, download Arduino IDE v1.8+
 
 * Plug Arduino into computer via the USB 2.0 A/B cable.
 * Select the board port via Tools->Port. Make sure the Tools->Board field is "Arduino Uno"
-* Upload the code by pressing the Upload button on the top-left (This may not work, see [issues & fixes](#known-issues-and-fixes))
 * For more detailed instructions, follow the official Getting Started: https://www.arduino.cc/en/Guide/ArduinoUno
 
-### Known Issues and Fixes
+### Dependencies
 
-If you install the USB 
+* USB Host Shield 2.0
+
+From the Arduino IDE, go to Sketch->Include Library->Manage Libraries. Search for USB Host Shield 2.0, and install the latest version.
+
+As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from working with our Logitech F310 game controller. To patch this, follow the instructions here (https://github.com/AlanFord/Logitech_F310_and_Arduino). Once you do this, you should be able to hit "Upload" and the motor controller should respond to joystick inputs.
+
 
 ## Help
 
