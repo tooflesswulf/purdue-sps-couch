@@ -29,9 +29,9 @@ As of USB Host Shield 2.0 v1.6.0, there is a known issue preventing it from work
 
 Button | Function
 -----|----
-Axis 1 up/down | Left wheels forward/back
-Axis 3 up/down | Right wheels forward/back
-Right bumper (Button 5) | Press for faster; release for slow mode
+Axis 1 (left joy up/down ) | Left wheels forward/back
+Axis 3 (right joy up/down) | Right wheels forward/back
+Button 5 (RB) | Press for faster; release for slow mode
 
 ## Help
 
